@@ -1,5 +1,10 @@
-export default function ProductImageGallery () {
+export default function ProductImageGallery ({ productData }) {
+    const imgUrl = productData.images[0].image_url;    
+
     return (
-        <p> Product img</p>
+        <div>
+            <img src={imgUrl} alt="productimage" height="500"></img>
+        </div>
+        
     )
 } 

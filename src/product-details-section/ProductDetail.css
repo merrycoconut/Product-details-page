@@ -1,0 +1,10 @@
+.product-detail {
+    margin: 4rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.product-name {
+    font-size: 36px;
+    font-weight: 600;
+}
