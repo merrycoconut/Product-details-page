@@ -1,5 +1,5 @@
 import ProductImageGallery from './ProductImageGallery';
-import ProductInfo from './ProductInfo';
+import ProductSummary from './ProductSummary';
 import { useState, useEffect } from 'react';
 import './ProductDetail.css';
 
@@ -23,7 +23,7 @@ export default function ProductDetails () {
             { productData && (
                 <>
                     <ProductImageGallery productData={productData} />
-                    <ProductInfo productData={productData} />
+                    <ProductSummary productData={productData} />
                 </>
             ) }  
         </div>

@@ -1,0 +1,38 @@
+.product-description {
+    padding: 1rem 0rem;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.product-description-head {
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-description-head > button {
+    background-color: white;
+    border: none;
+    /* border: 2px solid #737373;*/
+    border-radius: 50%; 
+    color: #737373;
+    font-weight: 600;
+    transition: 0.2s all linear;
+}
+
+.product-description-head > 
+button:hover, button:focus {
+    transform: translateY(-1px);
+    background: #eeeeee;
+    box-shadow: 0px 1px 5px #eeeeee;    
+}
+
+.product-description > ul {
+    padding: 0;
+
+}
+
+.product-description > ul > li {
+    color: #525252;
+    list-style-position: inside;
+    list-style-type: disc;
+}
