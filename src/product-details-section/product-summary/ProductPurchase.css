@@ -47,6 +47,29 @@ input:checked + label {
     border-color: #4f46e5;
 }
 
+
+.quantity-modifier {
+    width: 30%;
+    display: inline;
+    background-color: #fafafa;
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.quantity-modifier button {
+    border: none;
+    border-radius: 10px;
+    background-color: #fafafa;
+    padding: 0 1rem;
+}
+
+.quantity-modifier p {
+    margin: 0.6rem  0;
+}
+
 input[type="submit"] {
     background-color: #4f46e5;
     color: white;

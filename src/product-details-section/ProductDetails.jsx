@@ -1,5 +1,5 @@
 import ProductImageGallery from './ProductImageGallery';
-import ProductSummary from './ProductSummary';
+import ProductSummary from './product-summary/ProductSummary';
 import { useState, useEffect } from 'react';
 import './ProductDetail.css';
 
