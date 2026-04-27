@@ -1,0 +1,26 @@
+.product-image-gallery {
+    flex: 1;
+}
+
+.product-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-image-thumbnail-container {
+    width: 100%;
+    margin: 1rem 0;
+    display: flex;
+    /* flex-wrap: wrap; */
+    gap: 1rem;
+    overflow-x: auto;
+}
+
+.thumbnail-item{
+    width: 25%;
+}
+
+.thumbnail-item:hover, .thumbnail-item:focus {
+    border: 2px solid #4F46E5;
+}

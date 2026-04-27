@@ -2,8 +2,9 @@ import './ProductPurchase.css';
 import { useState } from 'react';
 
 
-export default function ProductPurchase ({productData}) {
+export default function ProductPurchase ({productData, selectedColor, setSelectedColor }) {
     const [quantity, setQuantity] = useState(1);
+    const [selectedSize, setSelectedSize] = useState(0);
 
     function handleMinus () {
         if (quantity > 1) {
@@ -13,14 +14,30 @@ export default function ProductPurchase ({productData}) {
     }
 
     const colorOptions = productData.colors.map( 
-        c => <input style={{backgroundColor: c}} type="radio" name="color"value={c} />
+        (c, index) => <input key={c} style={{backgroundColor: c}} type="radio" name="color"value={c} checked={index === selectedColor} onChange={() => setSelectedColor(index)} />
     );
 
-    const sizeOptions = productData.sizes.map(size => {
-        return (<>
-            <input type="radio" name="size" value={size} id={size} />
-            <label className='selection-size-item' htmlFor={size} > {size.toUpperCase()} </label>
-        </>) 
+    const sizeOptions = productData.sizes.map((size, index) => {
+        const isChecked = index === selectedSize;
+
+        return (
+            <div  
+                className={isChecked ? 
+                    'selection-size-item selection-size-item-checked' : 
+                    'selection-size-item' } 
+                key={size} 
+            >
+                <input  
+                    type="radio" 
+                    name="size" 
+                    value={size} 
+                    id={size} 
+                    checked={isChecked}
+                    onChange={() => setSelectedSize(index)}
+                />
+                <label  htmlFor={size} > {size.toUpperCase()} </label>
+            </div>
+        ) 
     } );
 
 
@@ -29,11 +46,14 @@ export default function ProductPurchase ({productData}) {
             <form className='product-purchase'>
                 <fieldset>
                     <legend className='selection-label'>Avaliable Colors</legend>
-                    <div className='selection-color'> {colorOptions} </div>
+                    <div className='selection-color-options'> {colorOptions} </div>
                 </fieldset>
                 <fieldset className='selection-size'>
                     <legend className='selection-label' >Avaliable Sizes</legend>
-                    {sizeOptions}
+                    <div className='selection-size-options'>
+                        {sizeOptions}
+                    </div>
+                    
                 </fieldset>
                 <fieldset>
                     <label className='selection-label' id='quantity' >Quantity</label>
