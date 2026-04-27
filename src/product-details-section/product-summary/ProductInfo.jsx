@@ -4,10 +4,10 @@ import { useActionState, useState } from 'react';
 export default function ProductInfo ({productData}) {
     const productInfo = productData.info.map(i => {
         const [isHidden, setHidden] = useState(false);
-        const description = i.description.map(d => <li>{d}</li>)
+        const description = i.description.map(d => <li key={d}>{d}</li>)
 
         return (
-            <div className="product-info">
+            <div className="product-info" key={i.title}>
                 <div className="product-info-head" >
                     <p>{i.title}</p>
                     <button onClick={() => setHidden(!isHidden)}>{isHidden? "+" : "─"}</button>
