@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import Navbar from './navbar/Navbar';
 import ProductDetails from './product-details-section/ProductDetails';
-import ProductSpecifications from './ProductSpecifications';
+import ProductSpecifications from './product-specification-section/ProductSpecifications';
 import Footer from './Footer';
 
 
