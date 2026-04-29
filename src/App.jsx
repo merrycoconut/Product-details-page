@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from './navbar/Navbar';
 import ProductDetails from './product-details-section/ProductDetails';
 import ProductSpecifications from './product-specification-section/ProductSpecifications';
-import Footer from './Footer';
+import Footer from './footer/Footer';
 
 
 function App() {
