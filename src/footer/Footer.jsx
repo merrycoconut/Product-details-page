@@ -18,10 +18,10 @@ function NewsLetter () {
                 <p className='newsletter-text-intro-title'>Join our newsletter</p>
                 <p>We'll send you a nice letter once per week. No spam. </p>
             </div>
-            <div className="newsletter-input">
-                <input type="text" placeholder="Enter your email" size="30"/>
+            <form className="newsletter-input">
+                <input type="text" id="userEmailInput" placeholder="Enter your email" size="30"/>
                 <button type="submit">Subscribe </button>
-            </div>            
+            </form>            
         </div>
     )
 }
@@ -54,10 +54,12 @@ function FooterNav () {
 }
 
 function CopyrightLogos () {
+    const year = new Date().getFullYear();
+
     return (
         <>
             <div className='footer-copyright-logos'>
-                <p>© 2024 StyleNest, Inc. All rights reserved. </p>
+                <p>© {year} StyleNest, Inc. All rights reserved. </p>
                 <div className='footer-logos'>
                     <RiYoutubeLine />
                     <RiInstagramLine />
