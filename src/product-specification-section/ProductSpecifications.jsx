@@ -8,12 +8,12 @@ export default function ProductSpecifications () {
 
     return (
         <div className="product-specification">
-            <p className='product-specification-title'>
-                {productSpecificationContents.title}
-            </p>
-            <p className='product-specification-description' >
-                {productSpecificationContents.description}
-            </p>
+            <div className='product-specification-title'>
+                <p> {productSpecificationContents.title} </p>
+            </div>
+            <div className='product-specification-description' >
+                <p> {productSpecificationContents.description} </p> 
+            </div>
             <ProductTabs isActive={isActive} setActive={setActive} tabLists= {productSpecificationContents.tabLists}/>
         </div>
     )
@@ -139,6 +139,5 @@ const productSpecificationContents = {
             
             ]
         },
-    ]
-
+    ],
 };
