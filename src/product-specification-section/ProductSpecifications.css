@@ -1,13 +1,13 @@
-.product-specification{
-    width:1280px;
-    margin: 4rem 6rem ;
+.product-specification {
+  width: 1280px;
+  margin: 4rem 6rem;
 }
 
 .product-specification-title {
-    font-size: 48px;
-    font-weight: 600;
+  font-size: 48px;
+  font-weight: 600;
 }
 
 .product-specification-description {
-    color: #525252;
+  color: #525252;
 }
