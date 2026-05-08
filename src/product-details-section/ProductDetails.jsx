@@ -7,16 +7,22 @@ export default function ProductDetails() {
   const [productData, setProductData] = useState();
   const [selectedColor, setSelectedColor] = useState(0);
 
-  async function pullJson() {
-    // Get product data and Render
-    let response = await fetch(
-      "https://www.greatfrontend.com/api/projects/challenges/e-commerce/products/voyager-hoodie",
-    );
-    let result = await response.json();
-    setProductData(result);
-  }
-
   useEffect(() => {
+    async function pullJson() {
+      // Get product data and Render
+      let response = await fetch(
+        "https://www.greatfrontend.com/api/projects/challenges/e-commerce/products/voyager-hoodie",
+      );
+
+      if (response.ok) {
+        let result = await response.json();
+        setProductData(result);
+      } else {
+        throw new Error (`"HTTP status: " ${response.status}`)
+      }
+     
+    }
+
     pullJson();
   }, []);
 
