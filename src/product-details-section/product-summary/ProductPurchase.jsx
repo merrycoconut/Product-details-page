@@ -9,7 +9,7 @@ export default function ProductPurchase({
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState(0);
 
-  function handleMinus() {
+  function handleMinus(event) {
     if (quantity > 1) {
       event.preventDefault();
       setQuantity(quantity - 1);
@@ -72,7 +72,7 @@ export default function ProductPurchase({
             <button onClick={handleMinus}>─</button>
             <p>{quantity}</p>
             <button
-              onClick={() => {
+              onClick={(event) => {
                 event.preventDefault();
                 setQuantity(quantity + 1);
               }}

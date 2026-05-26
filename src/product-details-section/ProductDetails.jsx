@@ -18,9 +18,8 @@ export default function ProductDetails() {
         let result = await response.json();
         setProductData(result);
       } else {
-        throw new Error (`"HTTP status: " ${response.status}`)
+        throw new Error(`"HTTP status: " ${response.status}`);
       }
-     
     }
 
     pullJson();
