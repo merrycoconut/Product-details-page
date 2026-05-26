@@ -22,7 +22,7 @@ function NewsLetter() {
     <div className="newsletter">
       <div className="newsletter-text-intro">
         <p className="newsletter-text-intro-title">Join our newsletter</p>
-        <p>We'll send you a nice letter once per week. No spam. </p>
+        <p>We'll send you a nice letter once per week. No spam.</p>
       </div>
       <form className="newsletter-input">
         <input
@@ -42,22 +42,19 @@ function FooterNav() {
     <div className="footer-nav">
       <div className="footer-nav-about-brand">
         <h4>StyleNest</h4>
-        <p>
-          {" "}
-          Craft stuning style journeys that weave more joy into every
-          thread.{" "}
-        </p>
+        <p>Craft stuning style journeys that weave more joy into every</p>
       </div>
 
       <nav className="footer-links">
         <ul>
-          <p>SHOP CATEGORIES</p>
+          SHOP CATEGORIES
           <li>Unisex</li>
           <li>Women</li>
           <li>Men</li>
         </ul>
+
         <ul>
-          <p>SHOP COLLECTIONS</p>
+          SHOP COLLECTIONS
           <li>Latest arrivals </li>
           <li>Urban Oasis </li>
           <li>Cozy Comfort </li>

@@ -4,7 +4,13 @@ import { useState } from "react";
 export default function ProductInfo({ productData }) {
   const productInfo = productData.info.map((i) => {
     const description = i.description.map((d) => <li key={d}>{d}</li>);
-    return <ProductInfoItem  key={i.title} title={i.title} description={description} />;
+    return (
+      <ProductInfoItem
+        key={i.title}
+        title={i.title}
+        description={description}
+      />
+    );
   });
 
   return <div className="product-info-container"> {productInfo} </div>;
