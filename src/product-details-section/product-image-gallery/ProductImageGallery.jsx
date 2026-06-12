@@ -2,7 +2,7 @@ import "./ProductImageGallery.css";
 import { useState } from "react";
 
 export default function ProductImageGallery({ productData, selectedColor }) {
-  const [isActive, setActive] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const imgUrls = productData.images
     .filter((img) => img.color === productData.colors[selectedColor])
@@ -13,16 +13,16 @@ export default function ProductImageGallery({ productData, selectedColor }) {
       <div className="product-image-main-gallery">
         <img
           className="product-image"
-          src={imgUrls[isActive]}
+          src={imgUrls[activeIndex]}
           alt="productimage"
         />
       </div>
-      <Thumbnail imgUrls={imgUrls} isActive={setActive} />
+      <Thumbnail imgUrls={imgUrls} onThumbnailClick={setActiveIndex} />
     </div>
   );
 }
 
-function Thumbnail({ imgUrls, setActive }) {
+function Thumbnail({ imgUrls, onThumbnailClick }) {
   return (
     <div className="product-image-thumbnail-container">
       {imgUrls.map((imgUrl, index) => {
@@ -32,7 +32,7 @@ function Thumbnail({ imgUrls, setActive }) {
             className="product-image thumbnail-item"
             src={imgUrl}
             alt="product image"
-            onClick={() => setActive(index)}
+            onClick={() => onThumbnailClick(index)}
           />
         );
       })}
