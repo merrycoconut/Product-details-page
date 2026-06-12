@@ -16,53 +16,53 @@ export default function ProductPurchase({
     }
   }
 
-  const colorOptions = productData.colors.map((c, index) => (
-    <input
-      key={c}
-      style={{ backgroundColor: c }}
-      type="radio"
-      name="color"
-      value={c}
-      checked={index === selectedColor}
-      onChange={() => onSelectedColorChange(index)}
-    />
-  ));
-
-  const sizeOptions = productData.sizes.map((size, index) => {
-    const isChecked = index === selectedSize;
-
-    return (
-      <div
-        className={
-          isChecked
-            ? "selection-size-item selection-size-item-checked"
-            : "selection-size-item"
-        }
-        key={size}
-      >
-        <input
-          type="radio"
-          name="size"
-          value={size}
-          id={size}
-          checked={isChecked}
-          onChange={() => setSelectedSize(index)}
-        />
-        <label htmlFor={size}> {size.toUpperCase()} </label>
-      </div>
-    );
-  });
-
   return (
     <div>
       <form className="product-purchase">
         <fieldset>
           <legend className="selection-label">Avaliable Colors</legend>
-          <div className="selection-color-options"> {colorOptions} </div>
+          <div className="selection-color-options">
+            {productData.colors.map((c, index) => (
+              <input
+                key={c}
+                style={{ backgroundColor: c }}
+                type="radio"
+                name="color"
+                value={c}
+                checked={index === selectedColor}
+                onChange={() => onSelectedColorChange(index)}
+              />
+            ))}
+          </div>
         </fieldset>
         <fieldset className="selection-size">
           <legend className="selection-label">Avaliable Sizes</legend>
-          <div className="selection-size-options">{sizeOptions}</div>
+          <div className="selection-size-options">
+            {productData.sizes.map((size, index) => {
+              const isChecked = index === selectedSize;
+
+              return (
+                <div
+                  className={
+                    isChecked
+                      ? "selection-size-item selection-size-item-checked"
+                      : "selection-size-item"
+                  }
+                  key={size}
+                >
+                  <input
+                    type="radio"
+                    name="size"
+                    value={size}
+                    id={size}
+                    checked={isChecked}
+                    onChange={() => setSelectedSize(index)}
+                  />
+                  <label htmlFor={size}> {size.toUpperCase()} </label>
+                </div>
+              );
+            })}
+          </div>
         </fieldset>
         <fieldset>
           <label className="selection-label" id="quantity">
