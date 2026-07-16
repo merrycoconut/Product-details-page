@@ -1,18 +1,48 @@
-# React + Vite
+# Product Details Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+A product details page for an e-commerce web application. Users can view product information, including the product name, images, price, reviews, variants, and features. In addition to the product details section, the page includes a navigation bar, a product specifications section, and a footer.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Display product details, including:
+  - Product name
+  - Product images
+  - Price
+  - Reviews
+  - Variants
+  - Features
+- Product specifications section
+- Navigation bar and footer
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Installation
 
-Note: This will impact Vite dev & build performances.
+Install the required dependencies using npm:
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Usage
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Technologies Used
+
+- HTML5
+- CSS
+- JavaScript
+- React
+
+## Future Improvements
+
+- Add responsive design for mobile and tablet devices
+- Integrate this page into a complete e-commerce application
+- Implement backend integration and API support
+- Rewrite the project using TypeScript
+- Improve performance and code organization

@@ -24,7 +24,6 @@ export default function ProductSummary({
       <ProductPrice productData={productData} />
       <div>
         <p className="product-rating">
-          {" "}
           {productRating} ★★★★☆
           <span className="product-rating-reviews"> {reviewContext} </span>
         </p>
