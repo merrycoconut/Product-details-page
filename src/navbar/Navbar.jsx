@@ -3,7 +3,7 @@ import { RiShoppingBag3Line } from "@remixicon/react";
 
 export default function Navbar() {
   return (
-    <nav className="navbar">
+    <nav className="navbar" aria-label="main navigation">
       <div> icon </div>
       <ol className="links-container">
         <li>
