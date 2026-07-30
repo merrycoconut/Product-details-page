@@ -1,6 +1,9 @@
 import "./ProductPrice.css";
+import type { ProductData } from "../../utils/productSpecificationContents";
 
-export default function ProductPrice({ productData }) {
+type ProductPriceProps = { productData: ProductData };
+
+export default function ProductPrice({ productData }: ProductPriceProps) {
   const list_price = productData.inventory[0].list_price;
   const sale_price = productData.inventory[0].sale_price;
   const onSale = list_price > sale_price;

@@ -1,10 +1,11 @@
-import ProductImageGallery from "./product-image-gallery/ProductImageGallery";
-import ProductSummary from "./product-summary/ProductSummary";
+import ProductImageGallery from "./product-image-gallery/ProductImageGallery.tsx";
+import ProductSummary from "./product-summary/ProductSummary.tsx";
 import { useState, useEffect } from "react";
 import "./ProductDetail.css";
+import type { ProductData } from "../utils/productSpecificationContents.tsx";
 
 export default function ProductDetails() {
-  const [productData, setProductData] = useState();
+  const [productData, setProductData] = useState<ProductData>();
   const [selectedColor, setSelectedColor] = useState(0);
 
   useEffect(() => {
