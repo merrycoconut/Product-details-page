@@ -36,7 +36,7 @@ npm run dev
 
 - HTML5
 - CSS
-- JavaScript
+- TypeScript
 - React
 
 ## Future Improvements
@@ -44,5 +44,4 @@ npm run dev
 - Add responsive design for mobile and tablet devices
 - Integrate this page into a complete e-commerce application
 - Implement backend integration and API support
-- Rewrite the project using TypeScript
 - Improve performance and code organization

@@ -1,7 +1,7 @@
 import "./ProductSummary.css";
-import ProductPurchase from "./ProductPurchase.js";
-import ProductInfo from "./ProductInfo.js";
-import ProductPrice from "./ProductPrice.js";
+import ProductPurchase from "./ProductPurchase.tsx";
+import ProductInfo from "./ProductInfo.tsx";
+import ProductPrice from "./ProductPrice.tsx";
 import type { ProductData } from "../../utils/productSpecificationContents";
 
 type ProductSummaryProps = {
