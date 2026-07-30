@@ -1,13 +1,18 @@
 import "./ProductInfo.css";
 import { useState } from "react";
+import type { ProductData } from "../../utils/productSpecificationContents";
 
-export default function ProductInfo({ productData }) {
+type ProductInfoProps = {
+  productData: ProductData;
+};
+
+export default function ProductInfo({ productData }: ProductInfoProps) {
   return (
     <div className="product-info-container">
       {productData.info.map((i) => {
         return (
           <ProductInfoItem
-            key={i.title}
+            key={i.title as React.Key}
             title={i.title}
             description={i.description}
           />
@@ -17,7 +22,9 @@ export default function ProductInfo({ productData }) {
   );
 }
 
-function ProductInfoItem({ title, description }) {
+type ProductInfoItemProps = { title: string; description: [] };
+
+function ProductInfoItem({ title, description }: ProductInfoItemProps) {
   const [isHidden, setHidden] = useState(false);
 
   return (

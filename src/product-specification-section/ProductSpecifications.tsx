@@ -1,7 +1,7 @@
 import "./ProductSpecifications.css";
-import ProductTabs from "./ProductTabs";
+import ProductTabs from "./ProductTabs.tsx";
 import { useState } from "react";
-import { productSpecificationContents } from "../utils/productSpecificationContents";
+import { productSpecificationContents } from "../utils/productSpecificationContents.tsx";
 
 export default function ProductSpecifications() {
   const [activeId, setActiveId] = useState(0);

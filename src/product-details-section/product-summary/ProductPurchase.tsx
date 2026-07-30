@@ -1,15 +1,22 @@
 import "./ProductPurchase.css";
 import { useState } from "react";
+import type { ProductData } from "../../utils/productSpecificationContents";
+
+type ProductPurchaseProps = {
+  productData: ProductData;
+  selectedColor: number;
+  onSelectedColorChange: React.Dispatch<React.SetStateAction<number>>;
+};
 
 export default function ProductPurchase({
   productData,
   selectedColor,
   onSelectedColorChange,
-}) {
+}: ProductPurchaseProps) {
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState(0);
 
-  function handleMinus(event) {
+  function handleMinus(event: React.MouseEvent) {
     if (quantity > 1) {
       event.preventDefault();
       setQuantity(quantity - 1);

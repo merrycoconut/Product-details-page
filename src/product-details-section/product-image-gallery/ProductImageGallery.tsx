@@ -1,12 +1,23 @@
 import "./ProductImageGallery.css";
 import { useState } from "react";
+import type { ProductData } from "../../utils/productSpecificationContents";
 
-export default function ProductImageGallery({ productData, selectedColor }) {
+type ProductImageGalleryProps = {
+  productData: ProductData;
+  selectedColor: number;
+};
+
+export default function ProductImageGallery({
+  productData,
+  selectedColor,
+}: ProductImageGalleryProps) {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const imgUrls = productData.images
-    .filter((img) => img.color === productData.colors[selectedColor])
-    .map((targetImg) => targetImg.image_url);
+  type ImgObj = { color: string; image_url: string };
+
+  const imgUrls: string[] = productData.images
+    .filter((img: ImgObj) => img.color === productData.colors[selectedColor])
+    .map((targetImg: ImgObj) => targetImg.image_url);
 
   return (
     <div className="product-image-gallery">
@@ -22,13 +33,18 @@ export default function ProductImageGallery({ productData, selectedColor }) {
   );
 }
 
-function Thumbnail({ imgUrls, onThumbnailClick }) {
+type ThumbnailProps = {
+  imgUrls: string[];
+  onThumbnailClick: React.Dispatch<React.SetStateAction<number>>;
+};
+
+function Thumbnail({ imgUrls, onThumbnailClick }: ThumbnailProps) {
   return (
     <div className="product-image-thumbnail-container">
       {imgUrls.map((imgUrl, index) => {
         return (
           <img
-            key={imgUrl}
+            key={imgUrl as React.Key}
             className="product-image thumbnail-item"
             src={imgUrl}
             alt="product image"

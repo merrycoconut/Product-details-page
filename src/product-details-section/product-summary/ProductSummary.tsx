@@ -1,13 +1,20 @@
 import "./ProductSummary.css";
-import ProductPurchase from "./ProductPurchase";
-import ProductInfo from "./ProductInfo";
-import ProductPrice from "./ProductPrice";
+import ProductPurchase from "./ProductPurchase.js";
+import ProductInfo from "./ProductInfo.js";
+import ProductPrice from "./ProductPrice.js";
+import type { ProductData } from "../../utils/productSpecificationContents";
+
+type ProductSummaryProps = {
+  productData: ProductData;
+  selectedColor: number;
+  onSelectedColorChange: React.Dispatch<React.SetStateAction<number>>;
+};
 
 export default function ProductSummary({
   productData,
   selectedColor,
   onSelectedColorChange,
-}) {
+}: ProductSummaryProps) {
   // Get the info later, construct the structure first
   const productName = productData.name;
   const productRating = productData.rating;

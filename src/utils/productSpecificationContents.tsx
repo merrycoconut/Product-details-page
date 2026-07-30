@@ -141,3 +141,21 @@ export const productSpecificationContents = {
     },
   ],
 };
+
+export type ProductData = {
+  colors: [];
+  description: string;
+  images: [{ color: string; image_url: string }];
+  info: [{ title: string; description: [] }];
+  inventory: [
+    {
+      list_price: number;
+      sale_price: number;
+      discount_percentage: number;
+    },
+  ];
+  name: string;
+  rating: number;
+  reviews: number;
+  sizes: string[];
+};

@@ -1,6 +1,26 @@
+import type { ReactNode } from "react";
 import "./ProductTabs.css";
 
-export default function ProductTabs({ activeId, onActiveIdChange, tabLists }) {
+type TabList = {
+  id: number;
+  name: string;
+  title: string;
+  image: { src: string; alt: string };
+  description: string;
+  labels: { icon: ReactNode; name: string }[];
+};
+
+type ProductTabsProps = {
+  activeId: number;
+  onActiveIdChange: React.Dispatch<React.SetStateAction<number>>;
+  tabLists: Array<TabList>;
+};
+
+export default function ProductTabs({
+  activeId,
+  onActiveIdChange,
+  tabLists,
+}: ProductTabsProps) {
   const tab = tabLists.map((tabList) => {
     const isSelected = tabList.id === activeId;
 
@@ -29,7 +49,9 @@ export default function ProductTabs({ activeId, onActiveIdChange, tabLists }) {
   );
 }
 
-function TabPanel({ tabList }) {
+type TabPanelProps = { tabList: TabList };
+
+function TabPanel({ tabList }: TabPanelProps) {
   const tabLabels = tabList.labels.map((label) => {
     return (
       <div key={label.name} className="tab-panel-label">

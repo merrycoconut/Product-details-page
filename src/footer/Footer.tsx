@@ -18,6 +18,8 @@ export default function Footer() {
 }
 
 function NewsLetter() {
+  const INPUTSIZE = 30;
+
   return (
     <div className="newsletter">
       <div className="newsletter-text-intro">
@@ -29,7 +31,7 @@ function NewsLetter() {
           type="text"
           id="userEmailInput"
           placeholder="Enter your email"
-          size="30"
+          size={INPUTSIZE}
         />
         <button type="submit">Subscribe </button>
       </form>
